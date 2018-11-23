@@ -9,57 +9,79 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
 
-var wizzardFirstNameArr = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var wizzardSurnameArr = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+var wizardFirstNameArr = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+var wizardSurnameArr = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
 function compareRandom() {
   return Math.random() - 0.5;
 }
 
-var getWizzardName = function (nameArr, surnameArr) {
+var getFullNames = function (nameArr, surnameArr) {
   nameArr.sort(compareRandom);
   surnameArr.sort(compareRandom);
-  var name = [];
+  var objectNames = [];
   for (var i = 0; i < nameArr.length; i++) {
-    name[i] = nameArr[i] + ' ' + surnameArr[i];
+    objectNames[i] = nameArr[i] + ' ' + surnameArr[i];
   }
-  return name;
+  return objectNames;
 };
 
-var wizzardName = getWizzardName(wizzardFirstNameArr, wizzardSurnameArr);
+var wizardNames = getFullNames(wizardFirstNameArr, wizardSurnameArr);
 
-var wizzardCoatColorArr = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var wizzardEyeColorArr = ['black', 'red', 'blue', 'yellow', 'green'];
+var wizardCoatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var wizardEyeColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var getRandomArrValue = function (arr) {
   return arr.sort(compareRandom);
 };
 
-var wizzardCoatColor = getRandomArrValue(wizzardCoatColorArr);
-var wizzardEyeColor = getRandomArrValue(wizzardEyeColorArr);
+var wizardCoatColors = getRandomArrValue(wizardCoatColors);
+var wizardEyeColors = getRandomArrValue(wizardEyeColors);
 
-var wizards = [
-  {
-    name: wizzardName[0],
-    coatColor: wizzardCoatColor[0],
-    eyesColor: wizzardEyeColor[0]
-  },
-  {
-    name: wizzardName[1],
-    coatColor: wizzardCoatColor[1],
-    eyesColor: wizzardEyeColor[1]
-  },
-  {
-    name: wizzardName[2],
-    coatColor: wizzardCoatColor[2],
-    eyesColor: wizzardEyeColor[2]
-  },
-  {
-    name: wizzardName[3],
-    coatColor: wizzardCoatColor[3],
-    eyesColor: wizzardEyeColor[3]
+var wizardObj = {
+  name: null,
+  coatColor: null,
+  eyesColor: null
+}
+
+var wizards = [];
+
+var getWizardsObj = function (amountOfwizards) {
+  var wizardObjs = []; //Я не понимаю, почему, но он меняет все значения в массиве. Хотя я задумывал, что он будет пересчитывать
+    for (var i = 0; i < amountOfwizards; i++ ) {
+      wizardObj.name = wizardNames[i];
+      wizardObj.coatColor = wizardCoatColors[i];
+      wizardObj.eyesColor = wizardEyeColors[i];
+      wizardObjs[i] = wizardObj
+    }
+    return wizardObjs
   }
-];
+
+wizards = getWizardsObj(4);
+
+
+// var wizards = [
+//   {
+//     name: wizardName[0],
+//     coatColor: wizardCoatColor[0],
+//     eyesColor: wizardEyeColor[0]
+//   },
+//   {
+//     name: wizardName[1],
+//     coatColor: wizardCoatColor[1],
+//     eyesColor: wizardEyeColor[1]
+//   },
+//   {
+//     name: wizardName[2],
+//     coatColor: wizardCoatColor[2],
+//     eyesColor: wizardEyeColor[2]
+//   },
+//   {
+//     name: wizardName[3],
+//     coatColor: wizardCoatColor[3],
+//     eyesColor: wizardEyeColor[3]
+//   }
+// ];
 
 
 var renderWizard = function (wizard) {
