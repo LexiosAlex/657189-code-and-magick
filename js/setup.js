@@ -35,54 +35,27 @@ var getRandomArrValue = function (arr) {
   return arr.sort(compareRandom);
 };
 
-var wizardCoatColors = getRandomArrValue(wizardCoatColors);
-var wizardEyeColors = getRandomArrValue(wizardEyeColors);
-
-var wizardObj = {
-  name: null,
-  coatColor: null,
-  eyesColor: null
-}
+wizardCoatColors = getRandomArrValue(wizardCoatColors);
+wizardEyeColors = getRandomArrValue(wizardEyeColors);
 
 var wizards = [];
 
 var getWizardsObj = function (amountOfwizards) {
-  var wizardObjs = []; //Я не понимаю, почему, но он меняет все значения в массиве. Хотя я задумывал, что он будет пересчитывать
-    for (var i = 0; i < amountOfwizards; i++ ) {
-      wizardObj.name = wizardNames[i];
-      wizardObj.coatColor = wizardCoatColors[i];
-      wizardObj.eyesColor = wizardEyeColors[i];
-      wizardObjs[i] = wizardObj
-    }
-    return wizardObjs
+  var wizardObjs = [];
+  for (var i = 0; i < amountOfwizards; i++) {
+    var wizardObj = {
+      name: wizardNames[i],
+      coatColor: wizardCoatColors[i],
+      eyesColor: wizardEyeColors[i]
+    };
+
+    wizardObjs[i] = wizardObj;
   }
 
+  return wizardObjs;
+};
+
 wizards = getWizardsObj(4);
-
-
-// var wizards = [
-//   {
-//     name: wizardName[0],
-//     coatColor: wizardCoatColor[0],
-//     eyesColor: wizardEyeColor[0]
-//   },
-//   {
-//     name: wizardName[1],
-//     coatColor: wizardCoatColor[1],
-//     eyesColor: wizardEyeColor[1]
-//   },
-//   {
-//     name: wizardName[2],
-//     coatColor: wizardCoatColor[2],
-//     eyesColor: wizardEyeColor[2]
-//   },
-//   {
-//     name: wizardName[3],
-//     coatColor: wizardCoatColor[3],
-//     eyesColor: wizardEyeColor[3]
-//   }
-// ];
-
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
