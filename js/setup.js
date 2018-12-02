@@ -8,7 +8,7 @@ var setupOpen = document.querySelector('.setup-open');
 var setupClose = userDialog.querySelector('.setup-close');
 var userNameInput = userDialog.querySelector('.setup-user-name');
 
-userNameInput.addEventListener('invalid', function (evt) {
+userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
@@ -45,7 +45,7 @@ var closePopup = function () {
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
-setupOpen.addEventListener('click', function (evt) {
+setupOpen.addEventListener('click', function () {
   openPopup();
 });
 
@@ -55,7 +55,7 @@ setupOpen.addEventListener('keydown', function (evt) {
   }
 });
 
-setupClose.addEventListener('click', function (evt) {
+setupClose.addEventListener('click', function () {
   closePopup();
 });
 
@@ -151,19 +151,19 @@ var wizzardApearenceEyes = wizzardApearence.querySelector('.wizard-eyes');
 var wizzardApearenceFireball = setupPlayer.querySelector('.setup-fireball-wrap');
 
 
-wizzardApearenceCoat.addEventListener('click', function (evt) {
+wizzardApearenceCoat.addEventListener('click', function () {
   var elementColor = getRandomArrValue(wizardCoatColors);
   wizzardApearenceCoat.style.fill = elementColor;
   wizzardApearence.querySelector('[name = "coat-color"]').value = elementColor;
 });
 
-wizzardApearenceEyes.addEventListener('click', function (evt) {
+wizzardApearenceEyes.addEventListener('click', function () {
   var elementColor = getRandomArrValue(wizardEyeColors);
   wizzardApearenceEyes.style.fill = elementColor;
   wizzardApearence.querySelector('[name = "eyes-color"]').value = elementColor;
 });
 
-wizzardApearenceFireball.addEventListener('click', function (evt) {
+wizzardApearenceFireball.addEventListener('click', function () {
   var elementColor = getRandomArrValue(wizzardFireballColors);
   wizzardApearenceFireball.style.backgroundColor = elementColor;
   wizzardApearenceFireball.querySelector('[name = "fireball-color"]').value = elementColor;
