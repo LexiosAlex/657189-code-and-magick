@@ -29,6 +29,15 @@ userNameInput.addEventListener('input', function (evt) {
   }
 });
 
+userNameInput.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    document.removeEventListener('keydown', onPopupEscPress);
+  } else {
+    document.removeEventListener('keydown', onPopupEscPress);
+    document.addEventListener('keydown', onPopupEscPress);
+  }
+});
+
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
