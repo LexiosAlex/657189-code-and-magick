@@ -2,6 +2,8 @@
 
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
+var SETUP_X = 50;
+var SETUP_Y = 80;
 
 var userDialog = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
@@ -45,6 +47,8 @@ var onPopupEscPress = function (evt) {
 };
 
 var openPopup = function () {
+  userDialog.style.top = SETUP_Y + 'px';
+  userDialog.style.left = SETUP_X + '%';
   userDialog.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
 };
