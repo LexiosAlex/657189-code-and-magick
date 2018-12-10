@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
   var getRandomArrValue = window.util.getRandomArrValue;
   var setupPlayer = document.querySelector('.setup-player');
   var wizzardApearence = document.querySelector('.setup-wizard-appearance');

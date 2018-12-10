@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
   var setupDialogElement = window.util.dialogSetup;
   var dialogHandler = setupDialogElement.querySelector('.upload');
 

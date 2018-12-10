@@ -1,8 +1,7 @@
 'use strict';
 
-(function(){
+(function () {
   var ESC_KEYCODE = window.util.ESC_KEYCODE;
-  var ENTER_KEYCODE = window.util.ENTER_KEYCODE;
   var SETUP_X = 50;
   var SETUP_Y = 80;
 

@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
   var userDialogSimilar = window.util.dialogSetup;
   var similarListElement = userDialogSimilar.querySelector('.setup-similar-list');
 
@@ -11,7 +11,7 @@
   var wizardFirstNameArr = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
   var wizardSurnameArr = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
-  var compareRandom =  window.util.compareRandom;
+  var compareRandom = window.util.compareRandom;
 
   var getFullNames = function (nameArr, surnameArr) {
     nameArr.sort(compareRandom);
