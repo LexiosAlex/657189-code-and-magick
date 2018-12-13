@@ -18,12 +18,12 @@ window.util = (function () {
     wizardFireballColors: wizardFireballColors,
     wizardCoatColors: wizardCoatColors,
     wizardEyeColors: wizardEyeColors,
-    isEscEvent: function (evt, action) {
+    callIfIsEscEvent: function (evt, action) {
       if (evt.keyCode === ESC_KEYCODE) {
         action();
       }
     },
-    isEnterEvent: function (evt, action) {
+    callIfIsEnterEvent: function (evt, action) {
       if (evt.keyCode === ENTER_KEYCODE) {
         action();
       }

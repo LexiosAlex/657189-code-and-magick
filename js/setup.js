@@ -41,7 +41,7 @@
   });
 
   var onPopupEscPress = function (evt) {
-    window.util.isEscEvent(evt, closePopup);
+    window.util.callIfIsEscEvent(evt, closePopup);
   };
 
   var openPopup = function () {
@@ -61,7 +61,7 @@
   });
 
   setupOpen.addEventListener('keydown', function (evt) {
-    window.util.isEnterEvent(evt, openPopup);
+    window.util.callIfIsEnterEvent(evt, openPopup);
   });
 
   setupClose.addEventListener('click', function () {
@@ -69,6 +69,6 @@
   });
 
   setupClose.addEventListener('keydown', function (evt) {
-    window.util.isEnterEvent(evt, closePopup);
+    window.util.callIfIsEnterEvent(evt, closePopup);
   });
 })();
